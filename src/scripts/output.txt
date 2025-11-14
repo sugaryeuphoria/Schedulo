@@ -1,0 +1,167 @@
+🔍 Inspecting Firebase Data...
+
+========== USERS (9 documents) ==========
+1. ID: 1kUvgormlDWtmxtS2kkn
+   Name: Jessica Martinez
+   Email: jessica@schedulo.com
+   Role: employee
+2. ID: 29XMcrLdcbhKmChT7v3h
+   Name: Sarah Johnson
+   Email: sarah@schedulo.com
+   Role: employee
+3. ID: G9sJCPbO8IdLIomGP8Hi
+   Name: Emma Wilson
+   Email: emma@schedulo.com
+   Role: employee
+4. ID: ONSUuZdP0NDhlnGVKFkq
+   Name: Mike Davis
+   Email: mike@schedulo.com
+   Role: employee
+5. ID: U8qG4fNEydUbNFcw4QxE
+   Name: John Smith
+   Email: john@schedulo.com
+   Role: employee
+6. ID: cBx5lrwirptLBh3fZWbT
+   Name: Rachel Taylor
+   Email: rachel@schedulo.com
+   Role: employee
+7. ID: jUHewnpT2tPAvXhM17A2
+   Name: Alex Manager
+   Email: manager@schedulo.com
+   Role: manager
+8. ID: ljjAuQzD76UWv5OYzu6q
+   Name: David Lee
+   Email: david@schedulo.com
+   Role: employee
+9. ID: ofIK2pptOZPaGFTdN4GY
+   Name: Alex Brown
+   Email: alex@schedulo.com
+   Role: employee
+
+========== SHIFTS (240 documents) ==========
+Sample of first 10 shifts:
+1. ID: 06qjZuCGTNuut1yIPdKM
+   employeeId: rachel
+   employeeName: Rachel Taylor
+   date: 2024-11-23
+   type: afternoon
+   time: 16:00 - 00:00
+2. ID: 0PaOGDs79XuJFPkKJMm1
+   employeeId: john
+   employeeName: John Smith
+   date: 2024-11-20
+   type: night
+   time: 00:00 - 08:00
+3. ID: 0SF1teHIP3PVWu6YcAX2
+   employeeId: emma
+   employeeName: Emma Wilson
+   date: 2024-11-27
+   type: afternoon
+   time: 16:00 - 00:00
+4. ID: 0Vh7YkbOXBEVQ9GUIpQ5
+   employeeId: alex
+   employeeName: Alex Brown
+   date: 2024-11-20
+   type: afternoon
+   time: 16:00 - 00:00
+5. ID: 0brFaR22DrxcLyIFOFxK
+   employeeId: rachel
+   employeeName: Rachel Taylor
+   date: 2024-11-24
+   type: afternoon
+   time: 16:00 - 00:00
+6. ID: 0j4M1oxEoiChS1k0Vmr8
+   employeeId: mike
+   employeeName: Mike Davis
+   date: 2024-11-15
+   type: night
+   time: 00:00 - 08:00
+7. ID: 0ptsGMAFqNyHJL5OAjVo
+   employeeId: emma
+   employeeName: Emma Wilson
+   date: 2024-11-23
+   type: day
+   time: 08:00 - 16:00
+8. ID: 0tbYw5U5HaMIQFuJrro0
+   employeeId: john
+   employeeName: John Smith
+   date: 2024-11-15
+   type: afternoon
+   time: 16:00 - 00:00
+9. ID: 18ant3rHeNhPzLhAPYEj
+   employeeId: rachel
+   employeeName: Rachel Taylor
+   date: 2024-11-28
+   type: night
+   time: 00:00 - 08:00
+10. ID: 1h2pBFvOOybtpirO1APr
+   employeeId: john
+   employeeName: John Smith
+   date: 2024-11-16
+   type: day
+   time: 08:00 - 16:00
+
+Total shifts: 240
+
+Shifts grouped by employeeId:
+  rachel: 30 shifts
+  john: 30 shifts
+  emma: 30 shifts
+  alex: 30 shifts
+  mike: 30 shifts
+  sarah: 30 shifts
+  jessica: 30 shifts
+  david: 30 shifts
+
+========== SWAP REQUESTS (4 documents) ==========
+1. ID: AXukZYWePL9gDc2j8PSk
+   From: U8qG4fNEydUbNFcw4QxE
+   To: 29XMcrLdcbhKmChT7v3h
+   Status: pending
+2. ID: MlesGvMY6tSGivhrnlFL
+   From: ONSUuZdP0NDhlnGVKFkq
+   To: G9sJCPbO8IdLIomGP8Hi
+   Status: accepted
+3. ID: nDPEmnC7RciNKyDJLVtE
+   From: ofIK2pptOZPaGFTdN4GY
+   To: G9sJCPbO8IdLIomGP8Hi
+   Status: accepted
+4. ID: nW3EaYoZhfp8KIOiEYEq
+   From: ONSUuZdP0NDhlnGVKFkq
+   To: ljjAuQzD76UWv5OYzu6q
+   Status: accepted
+
+========== ACTIVITY LOGS (39 documents) ==========
+Sample of first 10 logs:
+1. Type: shift_deleted
+   User: Alex Manager
+   Description: Deleted day shift for Mike Davis on 11/16/2024
+2. Type: shift_created
+   User: Alex Manager
+   Description: New day shift assigned to Mike Davis on 11/16/2024
+3. Type: swap_accepted
+   User: David Lee
+   Description: David Lee accepted swap request from Mike Davis
+4. Type: swap_requested
+   User: Mike Davis
+   Description: Mike Davis requested to swap day shift on 11/16/2024
+5. Type: shift_deleted
+   User: Alex Manager
+   Description: Deleted afternoon shift for David Lee on 11/16/2024
+6. Type: shift_deleted
+   User: Alex Manager
+   Description: Deleted day shift for David Lee on 11/16/2024
+7. Type: shift_deleted
+   User: Alex Manager
+   Description: Deleted afternoon shift for Alex Brown on 11/15/2024
+8. Type: shift_deleted
+   User: Alex Manager
+   Description: Deleted day shift for Rachel Taylor on 11/15/2024
+9. Type: shift_deleted
+   User: Alex Manager
+   Description: Deleted day shift for John Smith on 11/15/2024
+10. Type: shift_deleted
+   User: Alex Manager
+   Description: Deleted day shift for Mike Davis on 11/15/2024
+
+✅ Data inspection complete!

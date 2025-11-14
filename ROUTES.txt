@@ -1,0 +1,72 @@
+# 🛣️ New Route Structure
+
+## Routes Overview
+
+Your app now has separate, dedicated routes:
+
+### `/auth` - Login Screen
+- Purpose: Authenticate users
+- Access: Direct from `/diagnostic` or manually navigate
+- Shows: Email/password login form
+- Required: Database must be initialized first
+
+### `/diagnostic` - Diagnostics & Setup
+- Purpose: Initialize database and run diagnostics
+- Access: Direct URL or from `/auth` if needed
+- Shows: Database seeding button + diagnostic tools
+- No login required
+
+### `/` - Dashboard (Default)
+- Purpose: Main app after successful login
+- Access: Automatic redirect after login
+- Shows: Employee or Manager dashboard
+- Protected: Requires login via `/auth`
+
+### `/tutorial` - Tutorial
+- Purpose: Interactive tutorial for new users
+- Access: From dashboard (if available)
+
+---
+
+## How to Use
+
+### First Time Setup:
+1. `http://localhost:8080/diagnostic`
+2. Click **"Initialize Database"**
+3. Navigate to `http://localhost:8080/auth`
+4. Login with credentials
+5. Access manager/employee dashboard
+
+### Regular Access:
+- **Login**: `http://localhost:8080/auth`
+- **Diagnostics**: `http://localhost:8080/diagnostic`
+- **Dashboard**: `http://localhost:8080/` (after login)
+
+### Quick Links:
+```
+http://localhost:8080/              → Dashboard (after login)
+http://localhost:8080/auth          → Login page
+http://localhost:8080/diagnostic    → Database setup & diagnostics
+http://localhost:8080/tutorial      → Tutorial
+```
+
+---
+
+## Navigation
+
+- **From Auth** → Click "Go to Diagnostic" if needed
+- **From Diagnostic** → Click "Go to Login" to test login
+- **From Dashboard** → Click "Sign Out" to return to login
+
+---
+
+## What You Can Do Now
+
+✅ Access diagnostics anytime at `/diagnostic`  
+✅ Login at `/auth`  
+✅ Use main dashboard at `/`  
+✅ Initialize database without logging in  
+✅ Run diagnostics at any time  
+✅ Clear separation between screens  
+
+Done! No more modal screens inside each other. Each page is its own route! 🎉
