@@ -36,6 +36,7 @@ export interface User {
   email: string;
   name: string;
   role: 'employee' | 'manager';
+  password?: string; // Optional password for persistent login (demo only)
 }
 
 export interface ActivityLog {

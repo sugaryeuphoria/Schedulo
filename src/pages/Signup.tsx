@@ -30,6 +30,7 @@ const Signup = () => {
                 email,
                 name,
                 role: 'employee', // Default role for new signups
+                password, // Save password for persistent login
             });
 
             // Add to test credentials for development (so they can login)
