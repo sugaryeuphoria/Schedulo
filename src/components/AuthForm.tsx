@@ -75,7 +75,7 @@ export const AuthForm = ({ onLogin, error }: AuthFormProps) => {
               </Button>
             </div>
 
-            <div className="border-t border-border/50 pt-4">
+            <div className="border-t border-border/50 pt-4 space-y-2">
               <Button
                 variant="ghost"
                 className="w-full text-sm text-muted-foreground hover:text-foreground"
@@ -83,6 +83,19 @@ export const AuthForm = ({ onLogin, error }: AuthFormProps) => {
               >
                 Manual Login
               </Button>
+
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground mb-2">
+                  Don't have an account?
+                </p>
+                <Button
+                  variant="outline"
+                  className="w-full text-sm"
+                  onClick={() => window.location.href = '/signup'}
+                >
+                  Create Account
+                </Button>
+              </div>
             </div>
           </div>
         ) : (
@@ -123,8 +136,8 @@ export const AuthForm = ({ onLogin, error }: AuthFormProps) => {
               </div>
             )}
 
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="w-full h-11 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
             >
               Sign In
@@ -137,6 +150,19 @@ export const AuthForm = ({ onLogin, error }: AuthFormProps) => {
             >
               Back to Quick Login
             </Button>
+
+            <div className="border-t border-border/50 pt-4">
+              <p className="text-center text-sm text-muted-foreground mb-2">
+                Don't have an account?
+              </p>
+              <Button
+                variant="outline"
+                className="w-full text-sm"
+                onClick={() => window.location.href = '/signup'}
+              >
+                Create Account
+              </Button>
+            </div>
           </form>
         )}
       </Card>

@@ -1,10 +1,10 @@
-import { 
-  collection, 
-  addDoc, 
-  getDocs, 
+import {
+  collection,
+  addDoc,
+  getDocs,
   getDoc,
-  doc, 
-  updateDoc, 
+  doc,
+  updateDoc,
   deleteDoc,
   query,
   where,
@@ -38,6 +38,11 @@ export const getUsers = async (): Promise<User[]> => {
 export const getUserById = async (userId: string): Promise<User | null> => {
   const users = await getUsers();
   return users.find(u => u.id === userId) || null;
+};
+
+export const getUserByEmail = async (email: string): Promise<User | null> => {
+  const users = await getUsers();
+  return users.find(u => u.email.toLowerCase() === email.toLowerCase()) || null;
 };
 
 // Shifts
@@ -141,7 +146,7 @@ export const subscribeToSwapRequests = (employeeId: string, callback: (requests:
   );
   return onSnapshot(q, async (snapshot) => {
     const requests = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as any));
-    
+
     // Fetch shift details for each swap request
     const enrichedRequests = await Promise.all(
       requests.map(async (req) => {
@@ -159,7 +164,7 @@ export const subscribeToSwapRequests = (employeeId: string, callback: (requests:
         return req as SwapRequest;
       })
     );
-    
+
     callback(enrichedRequests);
   });
 };
@@ -224,7 +229,7 @@ export const deleteAllAvailability = async () => {
  */
 export const generateAvailabilityData = async (shifts: Shift[], users: User[]) => {
   const employees = users.filter(u => u.role === 'employee');
-  
+
   // Delete existing availability data
   await deleteAllAvailability();
 
@@ -232,7 +237,7 @@ export const generateAvailabilityData = async (shifts: Shift[], users: User[]) =
   const startDate = new Date(2024, 10, 14); // Nov 14
   const endDate = new Date(2024, 10, 30);   // Nov 30
   const dateRange: string[] = [];
-  
+
   const currentDate = new Date(startDate);
   while (currentDate <= endDate) {
     dateRange.push(currentDate.toISOString().split('T')[0]);
@@ -244,7 +249,7 @@ export const generateAvailabilityData = async (shifts: Shift[], users: User[]) =
 
   // Generate availability list for each employee
   const availabilityRecords: Omit<Availability, 'id'>[] = [];
-  
+
   employees.forEach(employee => {
     // Create availability list for this employee
     const availabilityList: DayAvailability[] = dateRange.map(date => {
