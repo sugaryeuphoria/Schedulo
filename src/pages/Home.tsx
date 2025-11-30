@@ -68,7 +68,6 @@ const Home = () => {
       <header className="relative z-10 border-b border-slate-200 backdrop-blur-sm bg-white/50">
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-8 h-8 text-yellow-600" />
             <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
               Schedulo
             </h1>
@@ -301,59 +300,6 @@ const Home = () => {
         </Card>
       </section>
 
-      {/* Footer */}
-      <footer className="relative z-10 border-t border-slate-300 backdrop-blur-sm py-12 mt-20 bg-white/30">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6 text-yellow-600" />
-                <span className="font-bold text-lg text-slate-900">Schedulo</span>
-              </div>
-              <p className="text-sm text-slate-700">Modern shift management platform for teams.</p>
-            </div>
-
-            {[
-              {
-                title: 'Product',
-                links: ['Features', 'Pricing', 'Security']
-              },
-              {
-                title: 'Company',
-                links: ['About', 'Blog', 'Contact']
-              },
-              {
-                title: 'Resources',
-                links: ['Documentation', 'API', 'Support']
-              }
-            ].map((col, idx) => (
-              <div key={idx}>
-                <h4 className="font-semibold mb-4 text-slate-900">{col.title}</h4>
-                <ul className="space-y-2">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <a href="#" className="text-sm text-slate-700 hover:text-slate-900 transition-colors">
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          <div className="border-t border-slate-300 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-slate-700">
-              © 2024 Schedulo. All rights reserved.
-            </p>
-            <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-slate-700 hover:text-slate-900 transition-colors">Privacy</a>
-              <a href="#" className="text-sm text-slate-700 hover:text-slate-900 transition-colors">Terms</a>
-              <a href="#" className="text-sm text-slate-700 hover:text-slate-900 transition-colors">Cookies</a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
