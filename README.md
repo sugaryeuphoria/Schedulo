@@ -747,7 +747,7 @@ Potential features for future development:
 
 ## Contributors & License
 
-Created as part of the Schedulo project. Built with ❤️ by Pooja.
+@Copyright2025
 
 ---
 
